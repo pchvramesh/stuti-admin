@@ -1,0 +1,31 @@
+.main-container{
+    min-height: calc(100vh - 88px);
+    .side-nav,.content-container{
+        padding: 0;
+        height: inherit;
+    }
+    .side-nav{
+        border-right: 1px solid #dad7d7;
+        width: 200px;
+    }
+    .content-container{
+        width: calc(100vw - 200px);
+    }   
+}
+
+.app-header{
+    border-bottom: 1px solid #ddd;
+}
+
+.app-footer{
+    font-size: 12px;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    padding: 5px;
+}
+
+@media screen and (max-width: 767px){
+    .side-nav{
+        display: none;
+    }
+}
