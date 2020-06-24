@@ -3,7 +3,7 @@ import React from 'react';
 class Footer extends React.Component{
     render(){
         return(
-            <div className="app-footer">NGSuperMart</div>
+            <div className="app-footer">Copy Right &copy; 2020 Stuti Labs</div>
         );
     }
 }

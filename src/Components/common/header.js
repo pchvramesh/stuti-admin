@@ -1,39 +1,51 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
-    Collapse,
     Navbar,
     NavbarToggler,
     NavbarBrand,
-    Nav,
-    NavItem,
-    NavLink,
     UncontrolledDropdown,
     DropdownToggle,
-    DropdownMenu,
-    DropdownItem,
-    NavbarText
+    DropdownMenu
 } from 'reactstrap';
 
-const Header = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    const toggle = () => setIsOpen(!isOpen);
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSignOutAlt, faCog } from '@fortawesome/free-solid-svg-icons';
 
-    return (
-        <Navbar className="app-header" color="light" light expand="md">
-            <NavbarToggler onClick={toggle} />
-            <NavbarBrand className="mr-auto" href="/">Reactstrap</NavbarBrand>
-            <UncontrolledDropdown inNavbar>
-                <DropdownToggle nav caret>
-                    Options
-              </DropdownToggle>
-                <DropdownMenu right>
-                    <DropdownItem>
-                        Option 1
-                </DropdownItem>
-                </DropdownMenu>
-            </UncontrolledDropdown>
-        </Navbar>
-    );
+class Header extends React.Component {
+    toggle = () => {
+        console.log(this.props);
+        this.props.sidebar.current.toggle();
+    }
+
+    render() {
+        return (
+            <div className="app-nav-bar">
+                <Navbar className="app-header" color="light" light expand="md">
+                    <NavbarToggler onClick={this.toggle} />
+                    <NavbarBrand className="mr-auto">Stuti Admin</NavbarBrand>
+                    <UncontrolledDropdown inNavbar>
+                        <DropdownToggle nav caret>
+                            John Doe
+                  </DropdownToggle>
+                        <DropdownMenu right>
+                            <div className="menu-item">
+                                <span className="icon">
+                                    <FontAwesomeIcon icon={faCog} />
+                                </span>
+                                <span className="label">Settings</span>
+                            </div>
+                            <div className="menu-item">
+                                <span className="icon">
+                                    <FontAwesomeIcon icon={faSignOutAlt} />
+                                </span>
+                                <span className="label">Logout</span>
+                            </div>
+                        </DropdownMenu>
+                    </UncontrolledDropdown>
+                </Navbar>
+            </div>
+        );
+    }
 }
 
 
