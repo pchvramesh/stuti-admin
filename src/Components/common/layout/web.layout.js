@@ -4,7 +4,7 @@ import WebHome from '../../website';
 import LoginPage from '../../auth/login';
 import Error404 from '../../error.404';
 
-const SimpleLayout = ({ match }) => {
+const WebLayout = ({ match }) => {
     return (
         <div className="container-fluid">
             <div className="row justify-content-center">
@@ -20,4 +20,4 @@ const SimpleLayout = ({ match }) => {
     )
 }
 
-export default SimpleLayout;
+export default WebLayout;

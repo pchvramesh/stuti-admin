@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route, Switch } from 'react-router';
+import { Route, Switch } from 'react-router';
 import Header from '../header';
 import Footer from '../footer';
 import SideBar from '../sidenav';
@@ -9,7 +9,7 @@ import UserEdit from '../../admin/views/users/users.edit';
 import UserAdd from '../../admin/views/users/users.add';
 import Error404 from '../../error.404';
 
-class AppLayout extends React.Component {
+class AdminLayout extends React.Component {
     componentDidMount() {
         let user = localStorage.getItem('user');
         //TODO un auth user redirection
@@ -20,7 +20,7 @@ class AppLayout extends React.Component {
     render = () => {
         const sidebar = React.createRef();
         const header = React.createRef();
-        const {match} = this.props;
+        const { match } = this.props;
         return (
             <div className="container-fluid d-flex flex-column">
                 <Header ref={header} sidebar={sidebar} />
@@ -44,4 +44,4 @@ class AppLayout extends React.Component {
     }
 }
 
-export default AppLayout;
+export default AdminLayout;
